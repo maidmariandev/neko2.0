@@ -17,3 +17,4 @@ services:
       NEKO_EPR: 59000-59100
       NEKO_CERT: /certs/html.casa.crt
       NEKO_KEY: /certs/html.casa.key
+      NEKO_BLAH: adf
