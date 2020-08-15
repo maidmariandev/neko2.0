@@ -38,3 +38,4 @@ bin
 # Environment files
 *.env
 .idea/workspace.xml
+.idea/workspace.xml
