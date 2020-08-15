@@ -1,4 +1,4 @@
-FROM nurdism/neko:base
+FROM belleepoke/browserserver:base
 
 #
 # install openbox

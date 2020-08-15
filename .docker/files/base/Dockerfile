@@ -1,4 +1,4 @@
-FROM nurdism/neko:deps
+FROM belleepoke/browserserver:deps
 
 #
 # avoid warnings by switching to noninteractive

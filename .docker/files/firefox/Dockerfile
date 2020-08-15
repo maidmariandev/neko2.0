@@ -1,4 +1,4 @@
-FROM nurdism/neko:openbox
+FROM belleepoke/browserserver:openbox
 
 #
 # install firefox-esr
