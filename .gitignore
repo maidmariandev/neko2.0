@@ -37,3 +37,4 @@ bin
 
 # Environment files
 *.env
+.idea/workspace.xml
