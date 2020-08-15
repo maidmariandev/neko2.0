@@ -1,4 +1,4 @@
-FROM belleepoke/browserserver:openbox
+FROM belleepoke/visionhub:openbox
 
 #
 # install firefox-esr

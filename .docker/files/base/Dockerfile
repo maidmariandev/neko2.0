@@ -1,4 +1,4 @@
-FROM belleepoke/browserserver:deps
+FROM belleepoke/visionhub:deps
 
 #
 # avoid warnings by switching to noninteractive

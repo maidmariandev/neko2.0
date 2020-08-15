@@ -1,4 +1,4 @@
-FROM belleepoke/browserserver:base
+FROM belleepoke/visionhub:base
 
 #
 # install openbox
