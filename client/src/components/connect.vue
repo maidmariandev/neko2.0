@@ -9,7 +9,7 @@
         <span>{{ $t('connect.title') }}</span>
         <input type="text" :placeholder="$t('connect.displayname')" v-model="displayname" />
         <input type="password" :placeholder="$t('connect.password')" v-model="password" />
-        <button type="submit" @click.stop.prevent="login">a
+        <button type="submit" @click.stop.prevent="login"> hello
           {{ $t('connect.connect') }}
         </button>
       </form>
