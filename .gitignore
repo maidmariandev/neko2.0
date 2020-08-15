@@ -39,3 +39,6 @@ bin
 *.env
 .idea/workspace.xml
 .idea/workspace.xml
+certs/certs - Shortcut.lnk
+certs/html.casa.pfx
+certs/html.casa.ca

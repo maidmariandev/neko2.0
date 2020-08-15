@@ -13,3 +13,5 @@ services:
       NEKO_PASSWORD_ADMIN: algebra2
       NEKO_BIND: :8080
       NEKO_EPR: 59000-59100
+      NEKO_CERT: /certs/html.casa.crt
+      NEKO_KEY: /certs/html.casa.key
