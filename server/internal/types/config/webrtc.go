@@ -33,7 +33,7 @@ func (WebRTC) Init(cmd *cobra.Command) error {
 		return err
 	}
 
-	cmd.PersistentFlags().StringSlice("iceserver", []string{"stun:stun.l.google.com:19302"}, "describes a single STUN and TURN server that can be used by the ICEAgent to establish a connection with a peer")
+	cmd.PersistentFlags().StringSlice("iceserver", []string{"stun:stun4.l.google.com:19302"}, "describes a single STUN and TURN server that can be used by the ICEAgent to establish a connection with a peer")
 	if err := viper.BindPFlag("iceserver", cmd.PersistentFlags().Lookup("iceserver")); err != nil {
 		return err
 	}
