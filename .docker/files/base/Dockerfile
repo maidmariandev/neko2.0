@@ -7,6 +7,14 @@ ENV DEBIAN_FRONTEND=noninteractive
 ARG USERNAME=neko
 ARG USER_UID=1000
 ARG USER_GID=$USER_UID
+RUN set -eux; \
+    cd /tmp; \
+    git clone https://github.com/jtanx/libclipboard; \
+    cd libclipboard; \
+    cmake . ; \
+    make -j4; \
+    make install; \
+    rm -rf /tmp/libclipboard;
 
 #
 # install neko dependencies
@@ -49,10 +57,23 @@ COPY .docker/files/base/supervisord.conf /etc/neko/supervisord.conf
 COPY .docker/files/base/xorg.conf /etc/neko/xorg.conf
 COPY .docker/files/base/neko.conf /etc/neko/supervisord/neko.conf
 
+COPY /server/. /server/
+COPY /client/. /client/
+RUN ls -la /server/*
+WORKDIR /server
+RUN go build -o bin/neko -ldflags "-s -X 'n.eko.moe/neko.buildDate=' -X 'n.eko.moe/neko.gitCommit=' -X 'n.eko.moe/neko.gitBranch='" -i cmd/neko/main.go
+RUN cp -f bin/neko /usr/bin/neko
+WORKDIR /client
+RUN npm install
+RUN npm run build
+RUN cp -rf dist/* /var/www
+
+
+
 #
 # neko dist
-COPY client/dist/ /var/www
-COPY server/bin/neko /usr/bin/neko
+#COPY client/dist/ /var/www
+#COPY server/bin/neko /usr/bin/neko
 
 #
 # run neko
